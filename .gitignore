@@ -1,0 +1,6 @@
+.*
+!.git*
+/lib
+*.iml
+target/
+build/

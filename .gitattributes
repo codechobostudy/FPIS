@@ -1,0 +1,2 @@
+*.java	  text diff=java  eol=lf
+*.scala   text diff=scala eol=lf
