@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/codechobostudy/FPIS.svg?branch=master)](https://travis-ci.org/codechobostudy/FPIS)
+
 The repository to learn about function programming paradigm using by the scala programming language and the book called Functional Programming In Scala.
 
 # Rules
