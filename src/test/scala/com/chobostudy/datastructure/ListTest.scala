@@ -26,4 +26,18 @@ class ListTest extends FunSuite {
     assert(!List.isEmpty(l))
     assert(result == expect)
   }
+
+  test("The list should be appended") {
+    val l = List(1, 2, 3)
+    val l2 = List(4, 5, 6)
+
+    val expect = List(1, 2, 3, 4, 5, 6)
+    val result = List.append(l, l2)
+
+    assert(!List.isEmpty(l))
+    assert(!List.isEmpty(l2))
+    assert(!List.isEmpty(expect))
+    assert(!List.isEmpty(result))
+    assertResult(expect)(result)
+  }
 }
