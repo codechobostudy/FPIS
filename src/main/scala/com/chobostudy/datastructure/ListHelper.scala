@@ -34,4 +34,9 @@ trait ListHelper {
     case Cons(h, Nil) => if (h == e) true else false
     case Cons(h, t)   => if (h == e) true else has(t, e)
   }
+
+  def append[A](x: List[A], y: List[A]): List[A] = x match {
+    case Nil        => y
+    case Cons(h, t) => Cons(h, append(t, y))
+  }
 }
