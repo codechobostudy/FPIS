@@ -45,19 +45,14 @@ class SolutionP52Test extends FunSuite {
 
   test("FoldRight should be such as FoldLeft") {
     val l = SolutionP52(1, 2, 3, 4, 5)
-    val f = (x: Int, y: Int) => (x + y) * 2
 
-    val result1 = SolutionP52.foldLeft(l, 1)(f)
-    val result2 = SolutionP52.foldRight(l, 1)(f)
+    val result1 = SolutionP52
+      .foldLeft(l, 1)((a, b) => a * 2)
+
+    val result2 = SolutionP52
+      .foldRight(l, 1)((b, a) => a * 2)
 
     assertResult(result1)(result2)
-
-    val f2 = (x: Int, y: String) => x + y
-
-    val result3 = SolutionP52.foldLeft(l, " hi ")((b, a) => a + b)
-    val result4 = SolutionP52.foldRight(l, " hi ")((a, b) => a + b)
-
-    assert(result3 == result4)
   }
 
   test("The list should be appended") {
