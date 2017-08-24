@@ -31,15 +31,14 @@ trait SolutionP55 {
   
   def startWith[A](sup: List[A], sub: List[A]): List[A] = sub match {
     case Cons(h2, t2) => {
-      @tailrec
-      def loop(l: List[A], h2: A, count: Int): List[A] = l match {
+      @annotation.tailrec
+      def loop(l: List[A], h2: A): List[A] = l match {
         case Cons(h, t) => {
-          println(h2)
-          if (h == h2) Cons(h, t) else loop(t, h2, count + 1)
+          if (h == h2) Cons(h, t) else loop(t, h2)
         }
         case Nil => Nil
       }
-      loop(sup, h2, 0)
+      loop(sup, h2)
     }
     case Nil => {
       Nil
