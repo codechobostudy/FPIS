@@ -10,7 +10,7 @@ import com.chobostudy.datastructure._
  */
 class SolutionP55Test extends FunSuite {
   test("this test case that check of hasSubsequence. ex) List(1,2,3,4) hasSubsequence List(1,2)") {
- 
+
     val expect = true
     val result = SolutionP55.hasSubsequence(List(1, 2, 3, 4), List(1, 2))
 

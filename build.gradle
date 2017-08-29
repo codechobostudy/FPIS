@@ -1,5 +1,6 @@
-apply plugin: "java"
 apply plugin: "maven"
+apply plugin: 'scala'
+
 
 group = "chobostudy"
 version = 1.0
@@ -9,14 +10,16 @@ repositories {
 }
 
 sourceSets {
-    api
-    impl
+    main {
+		java {
+			srcDirs = ["src/main/scala", "src/test/scala"]
+		}    
+    }
 }
 
 dependencies {
-	compile 'org.scala-lang:scala-library:2.11.7'
-    compile group: 'org.scala-lang', name: 'scala-library', version: '2.11.7'
-    testCompile 'org.scalatest:scalatest_2.11:3.0.1'
+    compile group: 'org.scala-lang', name: 'scala-library', version: '2.12.2'
+    testCompile 'org.scalatest:scalatest_2.12:3.0.1'
   	testRuntime 'org.pegdown:pegdown:1.4.2'
 }
 
