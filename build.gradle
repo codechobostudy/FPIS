@@ -1,0 +1,25 @@
+apply plugin: "java"
+apply plugin: "maven"
+
+group = "chobostudy"
+version = 1.0
+
+repositories {
+    mavenCentral()
+}
+
+sourceSets {
+    api
+    impl
+}
+
+dependencies {
+	compile 'org.scala-lang:scala-library:2.11.7'
+    compile group: 'org.scala-lang', name: 'scala-library', version: '2.11.7'
+    testCompile 'org.scalatest:scalatest_2.11:3.0.1'
+  	testRuntime 'org.pegdown:pegdown:1.4.2'
+}
+
+tasks.withType(ScalaCompile) {
+  scalaCompileOptions.useAnt = false
+}

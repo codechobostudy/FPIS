@@ -1,25 +1,25 @@
-package com.chobostudy.loustler.datastructure
+package com.chobostudy.audtjddld.datastructure
 
 import com.chobostudy.datastructure._
 
 /**
-  * The why solution for page 55 to be trait.
-  *
-  * The reason enables the other packages to use it.
-  *
-  * @author audtjddld
-  * @since 08/23/2017
-  */
+ * The why solution for page 55 to be trait.
+ *
+ * The reason enables the other packages to use it.
+ *
+ * @author audtjddld
+ * @since 08/23/2017
+ */
 trait SolutionP55 {
   /*
      List(1,2,3,4) 부분 순차열 List(1,2)나 List(2,3) , List(4)는 List (1,2,3,4)의 부분 순차열이다.
    */
   // exercise 3.24
- def hasSubsequence[A](sup: List[A], sub: List[A]): Boolean = {
+  def hasSubsequence[A](sup: List[A], sub: List[A]): Boolean = {
     def isSubsequence[A](sup: List[A], sub: List[A], result: Boolean): Boolean = sup match {
       case Cons(h1, t1) => sub match {
         case Cons(h2, t2) => {
-          if(h1 == h2) isSubsequence(t1, t2, true) 
+          if (h1 == h2) isSubsequence(t1, t2, true)
           else isSubsequence(t1, t2, false)
         }
         case Nil => result
@@ -28,7 +28,7 @@ trait SolutionP55 {
     }
     isSubsequence(startWith(sup, sub), sub, false)
   }
-  
+
   def startWith[A](sup: List[A], sub: List[A]): List[A] = sub match {
     case Cons(h2, t2) => {
       @annotation.tailrec
