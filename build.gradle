@@ -18,9 +18,9 @@ sourceSets {
 }
 
 dependencies {
-    compile group: 'org.scala-lang', name: 'scala-library', version: '2.12.2'
-    testCompile 'org.scalatest:scalatest_2.12:3.0.1'
-  	testRuntime 'org.pegdown:pegdown:1.4.2'
+	compile group: 'org.scala-lang', name: 'scala-library', version: '2.12.2'
+	testCompile 'org.scalatest:scalatest_2.12:3.0.1'
+	testRuntime 'org.pegdown:pegdown:1.4.2'
 }
 
 tasks.withType(ScalaCompile) {
