@@ -16,28 +16,28 @@ trait SolutionP55 {
    */
   // exercise 3.24
   def hasSubsequence[A](sup: List[A], sub: List[A]): Boolean = {
-    def isSubsequence[A](sup: List[A], sub: List[A], result: Boolean): Boolean = sup match {
-      case Cons(h1, t1) => sub match {
-        case Cons(h2, t2) => {
-          if (h1 == h2) isSubsequence(t1, t2, true)
-          else isSubsequence(t1, t2, false)
+      def isSubsequence[A](sup: List[A], sub: List[A], result: Boolean): Boolean = sup match {
+        case Cons(h1, t1) => sub match {
+          case Cons(h2, t2) => {
+            if (h1 == h2) isSubsequence(t1, t2, true)
+            else isSubsequence(t1, t2, false)
+          }
+          case Nil => result
         }
         case Nil => result
       }
-      case Nil => result
-    }
     isSubsequence(startWith(sup, sub), sub, false)
   }
 
   def startWith[A](sup: List[A], sub: List[A]): List[A] = sub match {
     case Cons(h2, t2) => {
-      @annotation.tailrec
-      def loop(l: List[A], h2: A): List[A] = l match {
-        case Cons(h, t) => {
-          if (h == h2) Cons(h, t) else loop(t, h2)
+        @annotation.tailrec
+        def loop(l: List[A], h2: A): List[A] = l match {
+          case Cons(h, t) => {
+            if (h == h2) Cons(h, t) else loop(t, h2)
+          }
+          case Nil => Nil
         }
-        case Nil => Nil
-      }
       loop(sup, h2)
     }
     case Nil => {
