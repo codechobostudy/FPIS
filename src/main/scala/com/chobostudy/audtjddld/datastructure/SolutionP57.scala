@@ -24,11 +24,21 @@ trait SolutionP57 {
   def maximum(tree: Tree[Int]) = {
       def travel(tree: Tree[Int], m: Int): Int = tree match {
         case Branch(left, right) => travel(right, travel(left, m))
-        case Leaf(value) => value max m
+        case Leaf(value)         => value max m
       }
     travel(tree, 0)
   }
-  
+
   // 3.27
+  def maxdepth[A](tree: Tree[A]): Int = tree match {
+    case Leaf(_)             => 0
+    case Branch(left, right) => 1 + (maxdepth(left) max maxdepth(right))
+  }
+
+  // 3.28
+  def map[A, B](tree: Tree[A])(f: A => B): Tree[B] = tree match {
+    case Leaf(a)      => Leaf(f(a))
+    case Branch(l, r) => Branch(map(l)(f), map(r)(f))
+  }
   
 }
