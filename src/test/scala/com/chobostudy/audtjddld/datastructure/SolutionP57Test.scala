@@ -17,6 +17,9 @@ class SolutionP57Test extends FunSuite {
     val respect = (1, 2)
     
     assert(result == respect)
+    
+    val result2 = SolutionP57.size(tree2)
+    assert(result2 != respect)
   }
   
   test("question number 3.26. how to max value of a Leaf in a tree") {
