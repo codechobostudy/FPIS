@@ -42,3 +42,5 @@ trait SolutionP57 {
   }
   
 }
+
+object SolutionP57 extends SolutionP57 {}
