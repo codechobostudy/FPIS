@@ -6,7 +6,7 @@ name := "fpis"
 
 version := "0.1"
 
-scalaVersion := "2.12.3"
+scalaVersion := "2.12.4"
 
 prefixScala := "scala"
 groupOfScalaLang := s"org.${prefixScala.value}-lang"
