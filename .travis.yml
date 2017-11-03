@@ -1,20 +1,20 @@
 language: scala
 sudo: required
 env:
-- JDK=oraclejdk8
-- JDK=openjdk8
+  - JDK=oraclejdk8
+  - JDK=openjdk8
 scala:
-- 2.12.0
-- 2.12.1
-- 2.12.2
-- 2.12.3
+  - 2.12.0
+  - 2.12.1
+  - 2.12.2
+  - 2.12.3
+  - 2.12.4
 os: linux
 dist: trusty
 before_script:
-- jdk_switcher use $JDK
+  - jdk_switcher use $JDK
 script:
-- sbt ++$TRAVIS_SCALA_VERSION -Dfile.encoding=UTF8 -J-XX:ReservedCodeCacheSize=256M
-  -J-Xms1024M test
+  - sbt ++$TRAVIS_SCALA_VERSION -Dfile.encoding=UTF8 -J-XX:ReservedCodeCacheSize=256M -J-Xms1024M test
 notifications:
   slack:
     secure: gyT8A7ZVRZpOZWWb9GV6eI+HK8Kus4rY8B/Lxc+kk6ODK10iLpgKhNZOr6DdCP5478xq80W5iTNbO4fDa7G/bb5LkwWF9Z5RAQnHkThYg6mbybwhHwc+U2g0GmYrbBqQBQOWLt5pnQDla1g31jsybITAiGPMl+cF3s6goKFEFCyY9hL+Icff/+yOfaRRgF9IAoEAiGiIDraix1/d6GphJ7y3WZZT3hEslaifwPddw0Jyy4nI4Uk4cCRPHTyZRfnVaaybBdlzxFy4CKcGp5lqTl81vIxDJ6OWtnGXCfEPIVgUCXgDlghqHJ6jFIM9nGFP17mn1grKxyJtwWyXgljWy5yDtJI1+3PHlWKvGyxJvGaGj9ExQ+U/CSezX7FXPWdUU/aMKr/wiBBi1tqv/kECTyDD0/1ZfPth+g2Q1hUElRelu0pWQX1EOojkk5AkVX1BFr91jnknKmq0vGeo6XGJeTabFxdb9Jyekry4PuGG9cHXZREISYLc9mOXFatqjy1CGIGsCdpVPd0r1ooqVyVz5KUHqz3p0zhVO7XtarvhdpHCEQ6MOwrZFPVtPOHlnz7mwI+qmZjsbcoh1sxK7fZRuOE0McYrY7Zt4LvL+crNAf5t0LtxyYdJ6EEvh40Bu6lgv+rCWGUWN+J8yQEMzY0TsLShsSEjjgpVjhCzyXdUdqk=
