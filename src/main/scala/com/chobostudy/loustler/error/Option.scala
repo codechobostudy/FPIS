@@ -38,3 +38,7 @@ trait Option[+A] {
 
 case class Some[+A](get: A) extends Option[A]
 case object None extends Option[Nothing]
+
+object Option {
+  def apply[T](t: T): Option[T] = if (t == null) None else Some(t)
+}
